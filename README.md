@@ -21,6 +21,6 @@ DashboardComponent is the root entry component
 LeadsDetailsComponent
 - there are disabled text and email buttons for future implementation.
 
-LleadsService
+LeadsService
 - addLeads - pushes mock data to the api
 - getData - fetch data
