@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+    <h1 class="dashboard-title">
+        <mat-icon>dashboard</mat-icon> Leads Dashboard
+    </h1>
+
+    <button mat-raised-button color="primary" (click)="sendMockData()">
+        <mat-icon>cloud_download</mat-icon> Receive Data from Provider
+    </button>
+
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon color="primary">person</mat-icon> {{ element.name }}
+                </td>
+            </ng-container>
+
+            <!-- Phone Column -->
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef> Phone </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon color="accent">phone</mat-icon> {{ element.phone }}
+                </td>
+            </ng-container>
+
+            <!-- Zip Column -->
+            <ng-container matColumnDef="zip">
+                <th mat-header-cell *matHeaderCellDef> Zip </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon color="warn">location_on</mat-icon> {{ element.zip }}
+                </td>
+            </ng-container>
+
+            <!-- Can Contact Column -->
+            <ng-container matColumnDef="canContact">
+                <th mat-header-cell *matHeaderCellDef> Can Contact </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox [checked]="element.canContact" color="primary" disabled></mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon color="primary">email</mat-icon> {{ element.email || 'N/A' }}
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"
+                class="clickable-row"></tr>
+
+        </table>
+    </div>
+</div>

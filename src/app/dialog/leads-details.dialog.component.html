@@ -1,0 +1,25 @@
+<mat-dialog-content class="dialog-container">
+    <h2 mat-dialog-title class="dialog-title">
+        <mat-icon>info</mat-icon> Lead Details
+    </h2>
+    <mat-divider></mat-divider>
+
+    <div class="dialog-content">
+        <p><strong>Name:</strong> {{ data.name }}</p>
+        <p><strong>Phone:</strong> {{ data.phone }}</p>
+        <p><strong>Zip:</strong> {{ data.zip }}</p>
+        <p><strong>Can Contact:</strong>
+            <mat-icon color="{{ data.canContact ? 'primary' : 'warn' }}">
+                {{ data.canContact ? 'check_circle' : 'cancel' }}
+            </mat-icon>
+        </p>
+        <p><strong>Email:</strong> {{ data.email }}</p>
+        <p><strong>Details:</strong> {{ data.details }}</p>
+    </div>
+
+    <mat-dialog-actions align="end">
+        <button mat-button color="primary" disabled="true">Text</button>
+        <button mat-button color="primary" disabled="true">Email</button>
+        <button mat-button color="primary" (click)="onClose()">Close</button>
+    </mat-dialog-actions>
+</mat-dialog-content>

@@ -1,0 +1,27 @@
+.dialog-container {
+    min-width: 350px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.dialog-content p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+mat-icon {
+    vertical-align: middle;
+}
+
+mat-dialog-actions {
+    margin-top: 16px;
+}
